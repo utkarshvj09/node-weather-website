@@ -5,8 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
-
-const port=process.env.PORT || 3000
+const port = process.env.PORT || 3000
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -24,14 +23,14 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Utkarsh'
+        name: 'Utkarsh Vijayvargiya'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        name: 'Utkarsh'
+        name: 'Utkarsh Vijayvargiya'
     })
 })
 
@@ -39,7 +38,7 @@ app.get('/help', (req, res) => {
     res.render('help', {
         helpText: 'This is some helpful text.',
         title: 'Help',
-        name: 'Utkarsh'
+        name: 'Utkarsh Vijayavargiya'
     })
 })
 
@@ -50,7 +49,7 @@ app.get('/weather', (req, res) => {
         })
     }
 
-    geocode(req.query.address, (error, { latitude, longitude, location }={}) => {
+    geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
         if (error) {
             return res.send({ error })
         }
@@ -85,7 +84,7 @@ app.get('/products', (req, res) => {
 app.get('/help/*', (req, res) => {
     res.render('404', {
         title: '404',
-        name: 'Utkarsh',
+        name: 'Utkarsh Vijayvargiya',
         errorMessage: 'Help article not found.'
     })
 })
@@ -93,11 +92,11 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404',
-        name: 'Utkarsh',
+        name: 'Utkarsh Vijayvargiya',
         errorMessage: 'Page not found.'
     })
 })
 
 app.listen(port, () => {
-    console.log('Server is up on port 3000.',port)
+    console.log('Server is up on port ' + port)
 })

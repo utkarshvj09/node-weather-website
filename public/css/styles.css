@@ -41,11 +41,12 @@ header a {
     width: 250px;
 }
 
-input{
+input {
     border: 1px solid #cccccc;
     padding: 8px;
 }
-button{
+
+button {
     cursor: pointer;
     border: 1px solid #888888;
     background: #888888;
